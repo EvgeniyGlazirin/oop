@@ -15,9 +15,17 @@ fc.exe %TEMP%\empty.txt empty.txt
 if ERRORLEVEL 1 goto err
 
 echo Testing copying not empty file
-%PROGRAM% input.txt %TEMP%\output.txt
+%PROGRAM% input.txt output.txt
 if ERRORLEVEL 1 goto err
-fc.exe %TEMP%\output.txt input.txt
+fc.exe output.txt input.txt
+if ERRORLEVEL 1 goto err
+
+echo Testing copying with input file is not exist
+%PROGRAM% inputIsNotExist.txt output.txt
+if not ERRORLEVEL 1 goto err
+
+echo Testing copying with output file is not exist
+%PROGRAM% input.txt outputIsNotExist.txt
 if ERRORLEVEL 1 goto err
 
 echo Sucsess testing
