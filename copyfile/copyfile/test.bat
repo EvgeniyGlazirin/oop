@@ -24,9 +24,6 @@ echo Testing copying with input file is not exist
 %PROGRAM% inputIsNotExist.txt output.txt
 if not ERRORLEVEL 1 goto err
 
-echo Testing copying with output file is not exist
-%PROGRAM% input.txt outputIsNotExist.txt
-if ERRORLEVEL 1 goto err
 
 echo Sucsess testing
 exit 0
