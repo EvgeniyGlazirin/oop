@@ -5,18 +5,21 @@ rem ѕеременна€ PROGRAM будет хранить первый аргумент командной строки заключЄнны
 set PROGRAM="%~1"
 
 rem ѕри запуске без параметров ожидаетс€ ненулевой код возврата
+echo Test1 - Testing launching without arguments
 %PROGRAM% > nul
 if NOT ERRORLEVEL 1 goto err
 
 rem ѕри запуске c верным количеством параметров ожидаетс€ нулевой код возврата
-echo Testing of number arguments 
-%PROGRAM% input.txt test >nul
+echo Test2 - Testing of number arguments 
+%PROGRAM% input.txt test > nul
 if ERRORLEVEL 1 goto err
 
 rem ѕри попытке чтени€ из несуществующего файла ожидаетс€ ненулевой код возврата
-echo Testing read from file is not exists
+echo Test3 - Testing read from file is not exists
 %PROGRAM% fileIsNotExists.txt test >nul
 if NOT ERRORLEVEL 1 goto err
+
+
 
 echo Testing sucsessful!
 exit 0
