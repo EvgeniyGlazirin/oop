@@ -12,7 +12,7 @@ if NOT ERRORLEVEL 1 goto err
 rem При запуске c верным количеством параметров ожидается нулевой код возврата
 echo Test2 - Testing of number arguments 
 %PROGRAM% input.txt test > nul
-if ERRORLEVEL 1 goto err
+if not ERRORLEVEL 1 goto err
 
 rem При попытке чтения из несуществующего файла ожидается ненулевой код возврата
 echo Test3 - Testing read from file is not exists
@@ -24,6 +24,27 @@ echo Test4 - Testing search with empty string
 %PROGRAM% input.txt "" > nul
 if NOT ERRORLEVEL 1 goto err
 
+rem При запуске с правильными параметрами и строка найдена -  ожидается нулевой код возврата 
+echo Test5 - Testing with right parameters and data
+%PROGRAM% input.txt "never" >nul
+if ERRORLEVEL 1 goto err
+
+rem При запуске с правильными параметрами и строкой, которая не найдена ожидается не нулевой код возврата 
+echo Test6 - Testing with right parameters and string which not found
+%PROGRAM% input.txt "stringNotFound" >nul
+if not ERRORLEVEL 1 goto err
+
+rem При запуске с правильными параметрами ожидается нулевой код возврата(исходный и результирующий файлы совпадают)
+echo Test7 - Testing result with expected result 
+%PROGRAM% test.txt "never" > "%TEMP%\result.txt" 
+fc.exe "%TEMP%\result.txt" expectedResult.txt >nul
+if ERRORLEVEL 1 goto err
+
+rem При запуске с правильными параметрами ожидается ненулевой код возврата(исходный и результирующий файлы не совпадают)
+echo Test8 - Testing result with expected wrong result 
+%PROGRAM% test.txt "now" > "%TEMP%\result.txt" 
+fc.exe "%TEMP%\result.txt" expectedResult.txt  > nul
+if not ERRORLEVEL 1 goto err
 
 
 echo Testing sucsessful!

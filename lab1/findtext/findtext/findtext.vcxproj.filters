@@ -39,5 +39,11 @@
     <Text Include="input.txt">
       <Filter>Исходные файлы</Filter>
     </Text>
+    <Text Include="test.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="expectedResult.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
   </ItemGroup>
 </Project>
