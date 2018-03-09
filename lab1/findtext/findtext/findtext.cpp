@@ -6,7 +6,7 @@
 bool PrintLineNumbersWhereSearchStringWasFound(std::ifstream &inputFile, std::string searchString)
 {
 	std::string line;
-	bool stringWasFound = true;
+	bool stringWasFound = false;
 
 	for (int numberOfLine = 1; std::getline(inputFile, line); ++numberOfLine)
 	{
