@@ -19,6 +19,11 @@ echo Test3 - Testing read from file is not exists
 %PROGRAM% fileIsNotExists.txt test >nul
 if NOT ERRORLEVEL 1 goto err
 
+rem При попытке поиска пустой строки ожидается ненулевой код возврата
+echo Test4 - Testing search with empty string
+%PROGRAM% input.txt "" > nul
+if NOT ERRORLEVEL 1 goto err
+
 
 
 echo Testing sucsessful!

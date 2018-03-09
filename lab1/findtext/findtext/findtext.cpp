@@ -3,8 +3,6 @@
 
 #include "stdafx.h"
 
-
-
 bool PrintLineNumbersWhereSearchStringWasFound(std::ifstream &inputFile, std::string searchString)
 {
 	std::string line;
@@ -52,6 +50,12 @@ int main(int argc, char* argv[])
 
 	std::string searchString;
 	searchString = argv[2];
+
+	if (searchString.empty())
+	{
+		std::cout << "Search string must be not empty. \n";
+		return 1;
+	}
 
     return ResultOfSearchStringInFile(inputFile, searchString);
 }
