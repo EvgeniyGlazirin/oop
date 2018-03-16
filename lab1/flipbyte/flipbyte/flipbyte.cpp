@@ -2,7 +2,7 @@
 //
 
 #include "stdafx.h"
-#include <string>
+
 
 uint8_t FlipByte(uint8_t inputByte)
 {
