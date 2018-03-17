@@ -3,7 +3,6 @@
 
 #include "stdafx.h"
 
-
 bool CheckFileToOpenForReading(const std::string &inputFile)
 {
 	std::ifstream file ;
@@ -25,8 +24,6 @@ bool IsSearchStringEmpty(std::string searchString)
 	}
 	return true;
 }
-
-
 
 bool PrintLineNumbersContainingText(const std::string &inputFile, std::string searchString)
 {
@@ -68,7 +65,6 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 
-
 	if (PrintLineNumbersContainingText(fileName, searchString))
 	{
 		return 0;
@@ -78,7 +74,6 @@ int main(int argc, char* argv[])
 		std::cout << "Text not found.\n";
 		return 1;
 	}
-
 
 }
 
