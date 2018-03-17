@@ -17,10 +17,12 @@ echo Test3 - Testing launching with wrong parameters count
 %PROGRAM% matrix1.txt > nul
 if not ERRORLEVEL 1 goto err
 
-
 echo Test4 - Testing read from file is not exists
 %PROGRAM% fileIsNotExists.txt matrix2.txt >nul
 if NOT ERRORLEVEL 1 goto err
+
+%PROGRAM% matrix1.txt matrix2.txt 
+if ERRORLEVEL 1 goto err
 
 %PROGRAM% matrix1.txt fileIsNotExists.txt >nul
 if NOT ERRORLEVEL 1 goto err
