@@ -3,12 +3,39 @@
 
 #include "stdafx.h"
 
-bool PrintLineNumbersWhereSearchStringWasFound(std::ifstream &inputFile, std::string searchString)
+
+bool CheckFileToOpenForReading(const std::string &inputFile)
+{
+	std::ifstream file ;
+	file.open(inputFile);
+	if (!file.is_open())
+	{
+		std::cout << "Failed to open " << inputFile << " for reading \n";
+		return false;
+	}
+	return true;
+}
+
+bool IsSearchStringEmpty(std::string searchString)
+{
+	if (searchString.empty())
+	{
+		std::cout << "Search string must be not empty. \n";
+		return false;
+	}
+	return true;
+}
+
+
+
+bool PrintLineNumbersContainingText(const std::string &inputFile, std::string searchString)
 {
 	std::string line;
 	bool stringWasFound = false;
+	std::ifstream file;
+	file.open(inputFile);
 
-	for (int numberOfLine = 1; std::getline(inputFile, line); ++numberOfLine)
+	for (int numberOfLine = 1; std::getline(file, line); ++numberOfLine)
 	{
 		auto pos = line.find(searchString);
 		if (pos != std::string::npos)
@@ -20,17 +47,6 @@ bool PrintLineNumbersWhereSearchStringWasFound(std::ifstream &inputFile, std::st
 	return stringWasFound;
 }
 
-int ResultOfSearchStringInFile(std::ifstream &inputFile, std::string searchString)
-{
-	if (!PrintLineNumbersWhereSearchStringWasFound(inputFile, searchString))
-	{
-		std::cout << "Search string was not found.\n";
-		return 1;
-	}
-	return 0;
-}
-
-
 int main(int argc, char* argv[])
 {
 	if (argc != 3)
@@ -40,23 +56,29 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 
-	std::ifstream inputFile;
-	inputFile.open(argv[1]);
-	if (!inputFile.is_open())
+	std::string fileName = argv[1];
+	if(!CheckFileToOpenForReading(fileName))
 	{
-		std::cout << "Failed to open " << argv[1] << " for reading \n";
 		return 1;
 	}
 
-	std::string searchString;
-	searchString = argv[2];
-
-	if (searchString.empty())
+	std::string searchString = argv[2];
+	if (!IsSearchStringEmpty(searchString))
 	{
-		std::cout << "Search string must be not empty. \n";
 		return 1;
 	}
 
-    return ResultOfSearchStringInFile(inputFile, searchString);
+
+	if (PrintLineNumbersContainingText(fileName, searchString))
+	{
+		return 0;
+	}
+	else
+	{
+		std::cout << "Text not found.\n";
+		return 1;
+	}
+
+
 }
 
