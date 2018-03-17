@@ -3,7 +3,6 @@
 
 #include "stdafx.h"
 
-
 uint8_t FlipByte(uint8_t inputByte)
 {
 	uint8_t outputByte;
@@ -29,18 +28,15 @@ int StringToInteger(char* input)
 	}
 }
 
-bool IsInputDataCorrect(int inputNumber) 
+bool IsNumberCanPlacedInByte(int inputNumber) 
 {
-	bool CheckInputDataCorrection = true;
 	if ((inputNumber < 0) || (inputNumber > 255))
 	{
 		std::cout << "Invalid argument value. It must be beetwen 0 and 255. \n";
-		CheckInputDataCorrection = false;
+		return false;
 	}
-	return CheckInputDataCorrection;
+	return true;
 }
-
-
 
 int main(int argc, char* argv[] )
 {
@@ -53,15 +49,13 @@ int main(int argc, char* argv[] )
 
 	int inputNumber = StringToInteger(argv[1]);
 
-	if (!IsInputDataCorrect(inputNumber))
+	if (!IsNumberCanPlacedInByte(inputNumber))
 	{
 		return 1;
 	}
 
-	int outputNumber = FlipByte(inputNumber);
-
+	int outputNumber = FlipByte(static_cast<uint8_t>(inputNumber));
 	std::cout << outputNumber << "\n";
-
     return 0;
 }
 
