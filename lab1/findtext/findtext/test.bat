@@ -16,7 +16,7 @@ if ERRORLEVEL 1 goto err
 
 rem ѕри попытке чтени€ из несуществующего файла ожидаетс€ ненулевой код возврата
 echo Test3 - Testing read from file is not exists
-%PROGRAM% fileIsNotExists.txt test >nul
+%PROGRAM% fileIsNotExists.txt test 
 if NOT ERRORLEVEL 1 goto err
 
 rem ѕри попытке поиска пустой строки ожидаетс€ ненулевой код возврата
