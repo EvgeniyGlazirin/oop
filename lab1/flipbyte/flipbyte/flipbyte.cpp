@@ -28,7 +28,7 @@ int StringToInteger(char* input)
 	}
 }
 
-bool IsNumberCanPlacedInByte(int inputNumber) 
+bool ConvertToByte(int inputNumber)
 {
 	if ((inputNumber < 0) || (inputNumber > 255))
 	{
@@ -48,13 +48,13 @@ int main(int argc, char* argv[] )
 	}
 
 	int inputNumber = StringToInteger(argv[1]);
-
-	if (!IsNumberCanPlacedInByte(inputNumber))
+	if (!ConvertToByte(inputNumber))
 	{
 		return 1;
 	}
 
-	int outputNumber = FlipByte(static_cast<uint8_t>(inputNumber));
+	uint8_t byte = static_cast<uint8_t>(inputNumber);
+	int outputNumber = FlipByte(byte);
 	std::cout << outputNumber << "\n";
     return 0;
 }
