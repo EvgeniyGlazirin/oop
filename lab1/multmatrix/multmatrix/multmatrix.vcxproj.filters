@@ -42,5 +42,11 @@
     <Text Include="matrix2.txt">
       <Filter>Исходные файлы</Filter>
     </Text>
+    <Text Include="expectedResult.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="expectedWrongResult.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
   </ItemGroup>
 </Project>

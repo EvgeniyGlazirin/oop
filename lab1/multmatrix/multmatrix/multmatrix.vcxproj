@@ -175,6 +175,8 @@
     <None Include="test.bat" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="expectedResult.txt" />
+    <Text Include="expectedWrongResult.txt" />
     <Text Include="matrix1.txt" />
     <Text Include="matrix2.txt" />
   </ItemGroup>

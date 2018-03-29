@@ -21,11 +21,19 @@ echo Test4 - Testing read from file is not exists
 %PROGRAM% fileIsNotExists.txt matrix2.txt >nul
 if NOT ERRORLEVEL 1 goto err
 
-%PROGRAM% matrix1.txt matrix2.txt 
-if ERRORLEVEL 1 goto err
-
 %PROGRAM% matrix1.txt fileIsNotExists.txt >nul
 if NOT ERRORLEVEL 1 goto err
+
+rem Тесты сравнения ожидаемого результата с получившимся
+echo Test5 - Testing result with expected result
+%PROGRAM% matrix1.txt matrix2.txt > "%TEMP%\result.txt"
+fc.exe "%TEMP%\result.txt" expectedResult.txt >nul
+
+
+echo Test6 - Testing result with expected wrong result
+%PROGRAM% matrix1.txt matrix2.txt > "%TEMP%\result.txt"
+fc.exe "%TEMP%\result.txt" expectedWrongResult.txt >nul
+if not ERRORLEVEL 1 goto err
 
 echo Testing sucsessful!
 exit 0
