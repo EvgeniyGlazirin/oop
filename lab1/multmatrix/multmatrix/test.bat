@@ -24,13 +24,16 @@ if NOT ERRORLEVEL 1 goto err
 %PROGRAM% matrix1.txt fileIsNotExists.txt >nul
 if NOT ERRORLEVEL 1 goto err
 
+echo Test5 - Testing read from file with wrong matrix size
+%PROGRAM% wrongMatrixSize.txt matrix2.txt >nul
+if NOT ERRORLEVEL 1 goto err
+
 rem Тесты сравнения ожидаемого результата с получившимся
-echo Test5 - Testing result with expected result
+echo Test6 - Testing result with expected result
 %PROGRAM% matrix1.txt matrix2.txt > "%TEMP%\result.txt"
 fc.exe "%TEMP%\result.txt" expectedResult.txt >nul
 
-
-echo Test6 - Testing result with expected wrong result
+echo Test7 - Testing result with expected wrong result
 %PROGRAM% matrix1.txt matrix2.txt > "%TEMP%\result.txt"
 fc.exe "%TEMP%\result.txt" expectedWrongResult.txt >nul
 if not ERRORLEVEL 1 goto err

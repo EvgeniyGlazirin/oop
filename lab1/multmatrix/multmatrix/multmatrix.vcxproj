@@ -179,6 +179,7 @@
     <Text Include="expectedWrongResult.txt" />
     <Text Include="matrix1.txt" />
     <Text Include="matrix2.txt" />
+    <Text Include="wrongMatrixSize.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

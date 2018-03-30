@@ -48,5 +48,8 @@
     <Text Include="expectedWrongResult.txt">
       <Filter>Исходные файлы</Filter>
     </Text>
+    <Text Include="wrongMatrixSize.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
   </ItemGroup>
 </Project>
