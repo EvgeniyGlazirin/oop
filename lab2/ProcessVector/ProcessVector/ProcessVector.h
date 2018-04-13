@@ -1,6 +1,6 @@
 #include <iostream>
 
-void ReadVector(std::istream const &input, std::vector<double> const &vec);
+std::vector<double> ReadVector(std::istream &input);
 
 void ProcessVector(std::vector<double> &vec);
 
