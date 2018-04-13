@@ -3,18 +3,18 @@
 
 #include "stdafx.h"
 
-enum result
+enum Result
 {
 	text_was_found,
 	text_not_found,
 	err
 };
 
-result PrintLineNumbersContainingText(const std::string &inputFile, std::string searchString)
+Result PrintLineNumbersContainingText(const std::string &inputFileName, const std::string searchString)
 {
 	std::string line;
 	std::ifstream file;
-	file.open(inputFile);
+	file.open(inputFileName);
 	if (!file.is_open())
 	{
 		return err;
@@ -59,7 +59,7 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 
-	result programResult = PrintLineNumbersContainingText(fileName, searchString);
+	Result programResult = PrintLineNumbersContainingText(fileName, searchString);
 	if (programResult == err)
 	{
 		std::cout << "Failed to open " << fileName << " for reading \n";
