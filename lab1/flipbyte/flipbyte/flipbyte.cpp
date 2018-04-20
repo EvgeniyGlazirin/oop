@@ -14,25 +14,10 @@ uint8_t FlipByte(uint8_t inputByte)
 	return outputByte;
 }
 
-int StringToInteger(char* input) 
-{
-	try
-	{
-		int inputNumber = std::stoi(input);
-		return (inputNumber);
-	}
-	catch (const std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-		return 1;
-	}
-}
-
-bool ConvertToByte(int inputNumber)
+bool FitsToByte(int inputNumber)
 {
 	if ((inputNumber < 0) || (inputNumber > 255))
 	{
-		std::cout << "Invalid argument value. It must be beetwen 0 and 255. \n";
 		return false;
 	}
 	return true;
@@ -47,13 +32,24 @@ int main(int argc, char* argv[] )
 		return 1;
 	}
 
-	int inputNumber = StringToInteger(argv[1]);
-	if (!ConvertToByte(inputNumber))
+	int number;
+	try
 	{
+		number = std::stoi(argv[1]);
+	}
+	catch (const std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
 		return 1;
 	}
 
-	uint8_t byte = static_cast<uint8_t>(inputNumber);
+	if (!FitsToByte(number))
+	{
+		std::cout << "Invalid argument value. It must be beetwen 0 and 255. \n";
+		return 1;
+	}
+
+	uint8_t byte = static_cast<uint8_t>(number);
 	int outputNumber = FlipByte(byte);
 	std::cout << outputNumber << "\n";
     return 0;

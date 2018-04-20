@@ -19,7 +19,7 @@ if not ERRORLEVEL 1 goto err
 
 echo Test4 - Testing launching with right parameters count and wrong data(not digit)
 %PROGRAM% notDigit >nul 
-if ERRORLEVEL 1 goto err
+if not ERRORLEVEL 1 goto err
 
 echo Test5 - Testing launching with wrong data (max value)
 %PROGRAM% 256 > nul
