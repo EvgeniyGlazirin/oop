@@ -10,8 +10,9 @@ int main(int argc, char *argv[])
 		return 1;
 	}
 	std::string subject;
-	std::getline(std::cin, subject);
-	std::cout << FindAndReplace(subject, argv[2], argv[3]);
-
+	while (std::getline(std::cin, subject))
+	{
+		std::cout << FindAndReplace(subject, argv[2], argv[3]) << std::endl;
+	}
 	return 0;
 }
