@@ -3,8 +3,6 @@
 
 #include "stdafx.h"
 
-
-
 int main()
 {
 	std::vector<double> inputNumbers = ReadVector(std::cin);
@@ -13,4 +11,3 @@ int main()
 	PrintVector(std::cout, inputNumbers);
 	return 0;
 }
-
