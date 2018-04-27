@@ -1,2 +1,3 @@
 #include <string>
-bool WordTranslationIsInDictionary(std::string userInput);
+bool WorkWithTheDictionary(std::string dictionaryName);
+//bool WordTranslationIsInDictionary(std::string userInput);
