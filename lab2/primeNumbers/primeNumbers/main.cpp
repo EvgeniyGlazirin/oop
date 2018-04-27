@@ -36,7 +36,7 @@ int main(int argc, char* argv[])
 
 	if (!IsUpperBoundCorrect(upperBound))
 	{
-		std::cout << "Incorrect value of upper bound. It should be from 2 to 100000000."
+		std::cout << "Incorrect value of upper bound. It should be from 0 to 100000000."
 			<< std::endl;
 		return 1;
 	}
