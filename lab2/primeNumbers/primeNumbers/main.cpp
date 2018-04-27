@@ -1,10 +1,11 @@
 #include "stdafx.h"
 
 const int maxValueNumber = 100000000;
+const int minValueNumber = 0;
 
 bool IsUpperBoundCorrect(int upperBound)
 {
-	return(upperBound <= maxValueNumber);
+	return(upperBound >= minValueNumber && upperBound <= maxValueNumber);
 }
 
 void PrintPrimeNumbers(std::ostream& output, const std::set<int>& primeNumbers)
