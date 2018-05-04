@@ -5,9 +5,9 @@
 
 enum Result
 {
-	text_was_found,
-	text_not_found,
-	err
+	Text_Was_Found,
+	Text_Not_Found,
+	Err
 };
 
 Result PrintLineNumbersContainingText(const std::string &inputFileName, const std::string searchString)
@@ -17,7 +17,7 @@ Result PrintLineNumbersContainingText(const std::string &inputFileName, const st
 	file.open(inputFileName);
 	if (!file.is_open())
 	{
-		return err;
+		return Err;
 	}
 
 	bool stringWasFound = false;
@@ -33,11 +33,11 @@ Result PrintLineNumbersContainingText(const std::string &inputFileName, const st
 
 	if (stringWasFound)
 	{
-		return text_was_found;
+		return Text_Was_Found;
 	} 
 	else
 	{
-		return text_not_found;
+		return Text_Not_Found;
 	}
 }
 
@@ -60,13 +60,11 @@ int main(int argc, char* argv[])
 	}
 
 	Result programResult = PrintLineNumbersContainingText(fileName, searchString);
-	if (programResult == err)
+	if (programResult == Err)
 	{
 		std::cout << "Failed to open " << fileName << " for reading \n";
 		return 1;
-	}
-	else if (programResult == text_not_found)
-	{
+	} else if (programResult == Text_Not_Found) {
 		std::cout << "Text not found\n";
 		return 1;
 	}

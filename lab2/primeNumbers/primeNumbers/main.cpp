@@ -8,7 +8,7 @@ bool IsUpperBoundCorrect(int upperBound)
 	return(upperBound >= minValueNumber && upperBound <= maxValueNumber);
 }
 
-void PrintPrimeNumbers(std::ostream& output, const std::set<int>& primeNumbers)
+void PrintSet(std::ostream& output, const std::set<int>& primeNumbers)
 {
 	std::copy(primeNumbers.begin(), primeNumbers.end(), std::ostream_iterator<int>(output, " "));
 	output << std::endl;
@@ -44,7 +44,7 @@ int main(int argc, char* argv[])
 	boost::timer time;
 	time.restart();
 	std::set<int> primeNumbers = GeneratePrimeNumbersSet(upperBound);
-	PrintPrimeNumbers(std::cout, primeNumbers);
+	PrintSet(std::cout, primeNumbers);
 	
 	std::cout << "Elapsed time " << time.elapsed() << std::endl;
 	return 0;
