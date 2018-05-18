@@ -166,6 +166,7 @@
   <ItemGroup>
     <ClCompile Include="..\Car\Car.cpp" />
     <ClCompile Include="CarTests.cpp" />
+    <ClCompile Include="DriveCarTests.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

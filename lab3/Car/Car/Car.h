@@ -12,11 +12,14 @@ public:
 	int GetSpeed()const;
 	enum class Direction; 
 	Direction GetDirection() const;
+
+
 private:
 	bool m_engineIsTurnedOn = false;
 	int m_gear = 0;
 	int m_speed = 0;
 	enum class Gear;
+
 };
 
 enum class CCar::Gear
@@ -36,3 +39,5 @@ enum class CCar::Direction
 	Stop,
 	Forward
 };
+
+
