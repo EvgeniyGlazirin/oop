@@ -88,13 +88,21 @@ bool CDriveCar::SetGear(int gear)
 	if (!IsEngineTurnedOn())
 	{
 		std::cout << "  Error: Engine should be turned on" << std::endl;
-	} else if ((gear < -1) || (gear > 5)) {
+	}
+	else if ((gear < -1) || (gear > 5))
+	{
 		std::cout << "  Error: Use a gear value between -1 and 5" << std::endl;
-	} else if ((gear == -1) && (speed != 0)) {
+	}
+	else if ((gear == -1) && (speed != 0))
+	{
 		std::cout << "  Error: Change to reverse gear can be done just when speed equals 0" << std::endl;
-	} else if ((currentGear == -1) && (gear == 1) && (speed != 0)) {
+	}
+	else if ((currentGear == -1) && (gear == 1) && (speed != 0))
+	{
 		std::cout << "  Error: Change reverse gear to 1st can be done when speed equals 0" << std::endl;
-	} else if (!IsCorrectValue(gear, speed)) {
+	}
+	else if(!IsCorrectValue(gear, speed))
+	{
 		std::cout << " Error: Gear is not correct for this speed" << std::endl;
 	}
 	
