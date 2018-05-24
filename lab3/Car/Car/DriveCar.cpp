@@ -117,11 +117,16 @@ bool CDriveCar::SetSpeed(int speed)
 	if (!IsEngineTurnedOn())
 	{
 		std::cout << "  Error: Engine should be turned on" << std::endl;
-	} else if ((gear == 0) && (speed > currentSpeed) && (speed >= 0)) {
+	}
+	else if ((gear == 0) && (speed > currentSpeed) && (speed >= 0))
+	{
 		std::cout << "  Error: Cannot set speed more than current if gear equals 0" << std::endl;
-	} else if (speed < 0) {
+	}
+	else if (speed < 0)
+	{
 		std::cout << "  Error: Speed cannot be negative" << std::endl;
-	} else if (!IsCorrectValue(gear, speed)) {
+	} else if (!IsCorrectValue(gear, speed))
+	{
 		std::cout << " Error: Speed is not correct for this gear" << std::endl;
 	}
 	
@@ -149,7 +154,6 @@ bool CDriveCar::HandleCommand()
 	if (itEngine != m_actionMapEngine.end())
 	{
 		return itEngine->second();
-		
 	}
 
 	auto itSpeedAndGear = m_actionMapSpeedAndGear.find(action);
