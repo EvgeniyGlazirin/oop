@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
 	CCar car;
-	CDriveCar driveCar(cin, cout);
+	CDriveCar driveCar(car, cin, cout);
 	while (!cin.eof() && !cin.fail())
 	{
 

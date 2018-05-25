@@ -3,7 +3,7 @@
 #include "../Car/DriveCar.h"
 using boost::none;
 using boost::optional;
-
+/*
 struct DriveCarDependencies
 {
 	std::stringstream input;
@@ -47,3 +47,4 @@ BOOST_AUTO_TEST_CASE(can_handle_EngineOn_command)
 	VerifyCommandHandling("EngineOn", true, 0, 0, "");
 }
 BOOST_AUTO_TEST_SUITE_END()
+*/

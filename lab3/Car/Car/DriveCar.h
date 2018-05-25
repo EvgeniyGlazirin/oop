@@ -1,25 +1,23 @@
 #pragma once
 #include "Car.h"
 
-class CDriveCar : public CCar
+class CDriveCar
 {
 public:
-	CDriveCar(std::istream & input, std::ostream & output);
+	CDriveCar(CCar &car, std::istream & input, std::ostream & output);
 	bool HandleCommand();
 private:
-	void Info();
-	bool OnEngine();
-	bool OffEngine();
-	bool SetGear(int gear);
-	bool SetSpeed(int speed);
-	bool GetValueSpeedOrGear(std::istream & arg, int& number);
+	bool Info(std::istream & args);
+	bool OnEngine(std::istream & args);
+	bool OffEngine(std::istream & args);
+	bool SetGear(std::istream & args);
+	bool SetSpeed(std::istream & args);
 private:
 	std::istream & m_input;
 	std::ostream & m_output;
+	CCar &m_car;
 
-	const std::map<std::string, std::function<void()>> m_actionMapInfo;
-	const std::map<std::string, std::function<bool()>> m_actionMapEngine;
-	const std::map<std::string, std::function<bool(int number)
-		>> m_actionMapSpeedAndGear;
+	typedef std::map<std::string, std::function<bool(std::istream & args)>> ActionMap;
+	const ActionMap m_actionMap;
 };
 
