@@ -31,10 +31,10 @@ struct DriveCarFixture : DriveCarDependencies
 		input = std::stringstream();
 		BOOST_CHECK(input << command);
 		BOOST_CHECK(driveCar.HandleCommand());
+		BOOST_CHECK_EQUAL(car.IsEngineTurnedOn(), expectedGear.is_initialized());
 		BOOST_CHECK_EQUAL(car.GetGear(), expectedGear.get_value_or(0));
 		BOOST_CHECK_EQUAL(car.GetSpeed(), expectedSpeed.get_value_or(0));
 		BOOST_CHECK(input.eof());
-		std::cout << output.str() << std::endl;
 		BOOST_CHECK_EQUAL(output.str(), expectedOutput);
 		
 	}
@@ -46,7 +46,11 @@ BOOST_FIXTURE_TEST_SUITE(drive_car_controller, DriveCarFixture)
 BOOST_AUTO_TEST_CASE(can_handle_EngineOn_command)
 {
 	VerifyCommandHandling("EngineOn", 0, 0, "");
-}/*
+}
+
+
+
+/*
 BOOST_AUTO_TEST_CASE(unknown_command_will_call_error)
 {
 	VerifyCommandHandling("Command ", 0, 0, "  Unknown command!");
