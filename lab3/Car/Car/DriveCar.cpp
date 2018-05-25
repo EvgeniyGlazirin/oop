@@ -143,7 +143,7 @@ bool CDriveCar::SetGear(std::istream & args)
 	}
 	else
 	{
-		std::cout << "  Error: Invalid speed value" << std::endl;
+		std::cout << "  Error: Invalid gear value" << std::endl;
 	}
 
 	m_car.SetGear(gear);
@@ -179,7 +179,7 @@ bool CDriveCar::SetSpeed(std::istream & args)
 	}
 	else
 	{
-		std::cout << "  Error: Invalid gear value" << std::endl;
+		std::cout << "  Error: Invalid speed value" << std::endl;
 	}
 	m_car.SetSpeed(speed);
 	return true;

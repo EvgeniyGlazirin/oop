@@ -1,5 +1,6 @@
 #pragma once
 #include "Car.h"
+#include <boost/noncopyable.hpp>
 
 class CDriveCar
 {
