@@ -136,6 +136,10 @@ bool CDriveCar::SetGear(std::istream & args)
 		{
 			std::cout << "  Error: Change reverse gear to 1st can be done when speed equals 0" << std::endl;
 		}
+		else if ((m_car.GetDirection() == CCar::Direction::Back) && (gear == 1))
+		{
+			std::cout << "  Error: Change gear cant be done when direction car is back" << std::endl;
+		}
 		else if (!IsCorrectValue(gear, speed))
 		{
 			std::cout << "  Error: Gear is not correct for this speed" << std::endl;
