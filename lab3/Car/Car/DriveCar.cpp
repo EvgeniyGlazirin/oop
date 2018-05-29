@@ -130,7 +130,7 @@ bool CDriveCar::SetGear(std::istream & args)
 		}
 		else if ((gear == -1) && (speed != 0))
 		{
-			std::cout << "  Error: Change to reverse gear can be done just when speed equals 0" << std::endl;
+			std::cout << "  Error: Change to reverse gear can be done only when speed equals 0" << std::endl;
 		}
 		else if ((currentGear == -1) && (gear == 1) && (speed != 0))
 		{
