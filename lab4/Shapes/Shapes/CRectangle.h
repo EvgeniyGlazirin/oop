@@ -20,7 +20,7 @@ public:
 	double GetHeight() const;
 
 	CPoint GetLeftTop() const;
-	CPoint GetRightBottom() const;
+	//CPoint GetRightBottom() const;
 
 private:
 	double m_width;

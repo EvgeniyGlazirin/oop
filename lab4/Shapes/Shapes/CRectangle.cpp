@@ -43,12 +43,6 @@ CPoint CRectangle::GetLeftTop() const
 	return m_leftTop;
 }
 
-
-CPoint CRectangle::GetRightBottom() const
-{
-	return m_rightBottom;
-}
-
 std::string CRectangle::GetOutlineColor() const
 {
 	return m_outlineColor;
