@@ -10,7 +10,6 @@ int main()
 	CDriveCar driveCar(car, cin, cout);
 	while (!cin.eof() && !cin.fail())
 	{
-
 		cout << "> ";
 		if (!driveCar.HandleCommand())
 		{
