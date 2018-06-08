@@ -64,7 +64,7 @@ double CTriangle::GetLength(CPoint const & point1, CPoint const & point2) const
 std::string CTriangle::ToString()const
 {
 	std::ostringstream strm;
-	strm << "Triangle:" << std::endl << std::setprecision(2)
+	strm << "Triangle:" << std::endl << std::setprecision(4) << std::fixed
 		<< "area = " << GetArea() << std::endl
 		<< "perimeter = " << GetPerimeter() << std::endl
 		<< "outline color = " << GetOutlineColor() << std::endl

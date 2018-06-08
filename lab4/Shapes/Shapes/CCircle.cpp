@@ -51,7 +51,7 @@ std::string CCircle::GetFillColor() const
 std::string CCircle::ToString()const
 {
 	std::ostringstream strm;
-	strm << "Circle:" << std::endl << std::setprecision(2)
+	strm << "Circle:" << std::endl << std::setprecision(4) << std::fixed
 		<< "area = " << GetArea() << std::endl
 		<< "perimeter = " << GetPerimeter() << std::endl
 		<< "outline color = " << GetOutlineColor() << std::endl
