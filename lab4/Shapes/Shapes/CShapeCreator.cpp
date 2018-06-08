@@ -33,7 +33,6 @@ std::shared_ptr<IShape> CShapeCreator::HandleCommand() const
 	{
 		return it->second(strm);
 	}
-	throw std::exception("Unknown command");
 }
 
 std::shared_ptr<IShape> CShapeCreator::CreateLine(std::istringstream & strm) const
