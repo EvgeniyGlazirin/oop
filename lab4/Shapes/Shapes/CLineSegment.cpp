@@ -42,9 +42,9 @@ std::string CLineSegment::GetOutlineColor() const
 std::string CLineSegment::ToString()const
 {
 	std::ostringstream strm;
-	strm << "Line segment:" << std::endl << std::setprecision(10)
-		<< "\tarea = " << GetArea() << std::endl
-		<< "\tperimeter = " << GetPerimeter() << std::endl
-		<< "\toutline color = " << GetOutlineColor() << std::endl;
+	strm << "Line segment:" << std::endl << std::setprecision(2)
+		<< "area = " << GetArea() << std::endl
+		<< "perimeter = " << GetPerimeter() << std::endl
+		<< "outline color = " << GetOutlineColor() << std::endl;
 	return strm.str();
 }

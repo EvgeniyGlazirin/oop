@@ -56,10 +56,10 @@ std::string CRectangle::GetFillColor() const
 std::string CRectangle::ToString()const
 {
 	std::ostringstream strm;
-	strm << "Rectangle:" << std::endl << std::setprecision(10)
-		<< "\tarea = " << GetArea() << std::endl
-		<< "\tperimeter = " << GetPerimeter() << std::endl
-		<< "\toutline color = " << GetOutlineColor() << std::endl
-		<< "\tfill color = " << GetFillColor() << std::endl;
+	strm << "Rectangle:" << std::endl << std::setprecision(2)
+		<< "area = " << GetArea() << std::endl
+		<< "perimeter = " << GetPerimeter() << std::endl
+		<< "outline color = " << GetOutlineColor() << std::endl
+		<< "fill color = " << GetFillColor() << std::endl;
 	return strm.str();
 }
