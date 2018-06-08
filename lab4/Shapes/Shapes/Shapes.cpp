@@ -2,6 +2,11 @@
 #include "IShape.h"
 #include "CShapeCreator.h"
 
+std::string GetMaxShapeArea(const std::vector<std::shared_ptr<IShape>> shapes)
+{
+	auto maxAreaShape = std::max_element(shapes.begin(), shapes.end(), );
+	return
+}
 
 void PrintInformation()
 {
@@ -24,18 +29,21 @@ int main()
 	CShapeCreator ShapeCreator(std::cin);
 
 	while (auto shape = ShapeCreator.HandleCommand())
-		{
-			shapes.push_back(shape);
-		}
+	{
+		shapes.push_back(shape);
+	}
 
 	if (!shapes.empty())
-		{
-			std::cout << "Shape with max area: " << std::endl;
-		//	std::cout << GetMaxShapeArea(shapes) << std::endl;
+	{
+		std::cout << "Shape with max area: " << std::endl;
+		std::cout << GetMaxShapeArea(shapes) << std::endl;
 
-			std::cout << "Shape with min perimeter: " << std::endl;
-			//std::cout << GetMinShapePerimeter(shapes) << std::endl;
-		}
-
+		std::cout << "Shape with min perimeter: " << std::endl;
+		//std::cout << GetMinShapePerimeter(shapes) << std::endl;
+	}
+	else
+	{
+		std::cout << "No any shapes" << std::endl;
+	}
 	return 0;
 }
