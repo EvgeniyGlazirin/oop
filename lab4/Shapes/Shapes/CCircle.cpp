@@ -1,13 +1,8 @@
 #include "stdafx.h"
 #include "CCircle.h"
 
-
 #define _USE_MATH_DEFINES
 #include <math.h>
-
-CCircle::CCircle()
-{
-}
 
 CCircle::CCircle(CPoint const & center, double const &radius, 
 	std::string const &outlineColor, std::string const &fillColor)

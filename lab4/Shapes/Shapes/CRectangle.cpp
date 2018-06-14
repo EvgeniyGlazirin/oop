@@ -4,10 +4,6 @@
 
 using namespace std;
 
-CRectangle::CRectangle()
-{
-}
-
 CRectangle::CRectangle(CPoint const &leftTop, double width, double height, 
 	std::string const &outlineColor, std::string const &fillColor)
 	: m_leftTop(leftTop)

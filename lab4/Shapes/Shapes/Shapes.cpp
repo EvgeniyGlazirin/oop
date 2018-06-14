@@ -1,13 +1,13 @@
 #include "stdafx.h"
 #include "IShape.h"
 #include "CShapeCreator.h"
-
+/*
 std::string GetMaxShapeArea(const std::vector<std::shared_ptr<IShape>> shapes)
 {
-	auto maxAreaShape = std::max_element(shapes.begin(), shapes.end(), );
+	auto maxAreaShape = std::max_element(shapes.begin(), shapes.end(), Ñ);
 	return
 }
-
+*/
 void PrintInformation()
 {
 	std::string information = "Enter firures according the form: \n"
@@ -36,7 +36,7 @@ int main()
 	if (!shapes.empty())
 	{
 		std::cout << "Shape with max area: " << std::endl;
-		std::cout << GetMaxShapeArea(shapes) << std::endl;
+		//std::cout << GetMaxShapeArea(shapes) << std::endl;
 
 		std::cout << "Shape with min perimeter: " << std::endl;
 		//std::cout << GetMinShapePerimeter(shapes) << std::endl;

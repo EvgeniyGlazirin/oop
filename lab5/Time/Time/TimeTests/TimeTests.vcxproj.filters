@@ -21,28 +21,7 @@
     <ClInclude Include="targetver.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="IShape.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="ISolidShape.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="CTriangle.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="CRectangle.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="CCircle.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Point.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="CLineSegment.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="CShapeCreator.h">
+    <ClInclude Include="..\Time\Time.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -50,25 +29,13 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="CTriangle.cpp">
+    <ClCompile Include="TimeTests.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="CRectangle.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="CCircle.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Point.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Shapes.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="CLineSegment.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="CShapeCreator.cpp">
+    <ClCompile Include="..\Time\Time.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
