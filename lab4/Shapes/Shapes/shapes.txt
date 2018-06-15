@@ -1,4 +1,4 @@
 line 10.2 12.5 14 16.8 fff000
-rectangle 6.8 12 15.2 ff00ff 00ff00
+rectangle 0 0 10 25 ff00ff 00ff00
 triangle 0 0 1 5 6 3 ff0ff0 0ff0ff
-circle 4 10 123f111 312ff1 
+circle 4.5 2 1 123f11 312ff1 
