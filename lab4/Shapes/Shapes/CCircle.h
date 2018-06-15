@@ -5,7 +5,6 @@
 class CCircle : public ISolidShape
 {
 public:
-	CCircle();
 	CCircle(CPoint const & center, double const &radius, 
 		std::string const &outlineColor, std::string const &fillColor);
 

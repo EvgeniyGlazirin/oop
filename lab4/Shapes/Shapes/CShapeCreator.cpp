@@ -20,7 +20,7 @@ CShapeCreator::~CShapeCreator()
 {
 }
 
-std::shared_ptr<IShape> CShapeCreator::HandleCommand() const
+std::shared_ptr<IShape> CShapeCreator::Command() const
 {
 	std::string command;
 	std::getline(m_input, command);

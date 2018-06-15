@@ -8,7 +8,7 @@ class CShapeCreator
 public:
 	CShapeCreator(std::istream &input);
 	~CShapeCreator();
-	std::shared_ptr<IShape> HandleCommand() const;
+	std::shared_ptr<IShape> Command() const;
 
 private:
 	std::map<std::string, std::function<std::shared_ptr<IShape>(std::istringstream &strm)>> m_actionMap;

@@ -2,7 +2,6 @@
 #include "Ishape.h"
 #include "Point.h"
 
-
 class CLineSegment : public IShape
 {
 public:
