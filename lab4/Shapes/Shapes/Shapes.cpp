@@ -1,13 +1,30 @@
 #include "stdafx.h"
 #include "IShape.h"
 #include "CShapeCreator.h"
-/*
-std::string GetMaxShapeArea(const std::vector<std::shared_ptr<IShape>> shapes)
+
+bool CompareShapeAreas(const std::shared_ptr<IShape> &shape, const std::shared_ptr<IShape> &nextShape)
 {
-	auto maxAreaShape = std::max_element(shapes.begin(), shapes.end(), Ñ);
-	return
+	return (shape->GetArea() < nextShape->GetArea());
 }
-*/
+
+std::string GetMaxShapeArea(const std::vector<std::shared_ptr<IShape>> & shapes)
+{
+	auto maxAreaShape = std::max_element(shapes.begin(), shapes.end(), CompareShapeAreas);
+	return (*maxAreaShape)->ToString();
+}
+
+bool CompareShapePerimeters(const std::shared_ptr<IShape> &shape, const std::shared_ptr<IShape> &nextShape)
+{
+	return (shape->GetArea() < nextShape->GetArea());
+}
+
+std::string GetMinShapePerimeter(const std::vector<std::shared_ptr<IShape>> & shapes)
+{
+	auto minPerimeterShape = std::min_element(shapes.begin(), shapes.end(), CompareShapePerimeters);
+	return (*minPerimeterShape)->ToString();
+}
+
+
 void PrintInformation()
 {
 	std::string information = "Enter firures according the form: \n"
@@ -36,10 +53,10 @@ int main()
 	if (!shapes.empty())
 	{
 		std::cout << "Shape with max area: " << std::endl;
-		//std::cout << GetMaxShapeArea(shapes) << std::endl;
+		std::cout << GetMaxShapeArea(shapes) << std::endl;
 
 		std::cout << "Shape with min perimeter: " << std::endl;
-		//std::cout << GetMinShapePerimeter(shapes) << std::endl;
+		std::cout << GetMinShapePerimeter(shapes) << std::endl;
 	}
 	else
 	{

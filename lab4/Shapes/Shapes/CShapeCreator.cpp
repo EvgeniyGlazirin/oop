@@ -23,6 +23,10 @@ CShapeCreator::~CShapeCreator()
 std::shared_ptr<IShape> CShapeCreator::Command() const
 {
 	std::string command;
+	if (!std::getline(m_input, command))
+	{
+		return {};
+	}
 	std::getline(m_input, command);
 	std::istringstream strm(command);
 	std::string figure;
