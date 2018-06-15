@@ -26,3 +26,9 @@ void CPoint::SetCoordinates(const double x, const double y)
 	m_x = x;
 	m_y = y;
 }
+
+double CPoint::GetLenghtToPoint(CPoint const & point) const
+{
+	return sqrt(pow((m_x - point.GetX()), 2)
+		+ pow((m_y - point.GetY()), 2));
+}

@@ -6,7 +6,6 @@
 class CLineSegment : public IShape
 {
 public:
-	CLineSegment();
 	CLineSegment(CPoint const & startPoint, CPoint const & endPoint,
 		std::string const &outlineColor);
 

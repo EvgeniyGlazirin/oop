@@ -176,8 +176,6 @@
     <ClCompile Include="..\Shapes\CRectangle.cpp" />
     <ClCompile Include="..\Shapes\CShapeCreator.cpp" />
     <ClCompile Include="..\Shapes\CTriangle.cpp" />
-    <ClCompile Include="..\Shapes\IShape.cpp" />
-    <ClCompile Include="..\Shapes\ISolidShape.cpp" />
     <ClCompile Include="..\Shapes\Point.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ShapesTests.cpp" />

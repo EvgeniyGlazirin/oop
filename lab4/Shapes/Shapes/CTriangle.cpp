@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "CTriangle.h"
+#include "Point.h"
 
 CTriangle::CTriangle(CPoint const & point1, CPoint const & point2, CPoint const & point3,
 	std::string const &outlineColor, std::string const &fillColor)
@@ -13,16 +14,18 @@ CTriangle::CTriangle(CPoint const & point1, CPoint const & point2, CPoint const 
 
 double CTriangle::GetPerimeter() const
 {
-	return (GetLength(m_vertex1, m_vertex2) + GetLength(m_vertex2, m_vertex3)
-		+ GetLength(m_vertex3, m_vertex1));
+	return (m_vertex1.GetLenghtToPoint(m_vertex2)
+		+ m_vertex2.GetLenghtToPoint(m_vertex3)
+		+ m_vertex3.GetLenghtToPoint(m_vertex1));
 }
+
 
 double CTriangle::GetArea() const
 {
 	double halfPerimeter = CTriangle::GetPerimeter() / 2;
-	return sqrt(halfPerimeter * (halfPerimeter - GetLength(m_vertex1, m_vertex2)) 
-		* (halfPerimeter - GetLength(m_vertex2, m_vertex3))
-		* (halfPerimeter - GetLength(m_vertex3, m_vertex1)));
+	return sqrt(halfPerimeter * (halfPerimeter - m_vertex1.GetLenghtToPoint(m_vertex2))
+		* (halfPerimeter - m_vertex2.GetLenghtToPoint(m_vertex3))
+		* (halfPerimeter - m_vertex3.GetLenghtToPoint(m_vertex1)));
 }
 
 std::string CTriangle::GetOutlineColor() const
@@ -48,12 +51,6 @@ CPoint CTriangle::GetVertex2() const
 CPoint CTriangle::GetVertex3() const
 {
 	return m_vertex3;
-}
-
-double CTriangle::GetLength(CPoint const & point1, CPoint const & point2) const
-{
-	return sqrt(pow((point1.GetX() - point2.GetX()), 2)
-		+ pow((point1.GetY() - point2.GetY()), 2));
 }
 
 std::string CTriangle::ToString()const

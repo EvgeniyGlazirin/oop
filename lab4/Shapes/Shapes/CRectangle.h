@@ -6,7 +6,6 @@ class CRectangle : public ISolidShape
 
 {
 public:
-	CRectangle();
 	CRectangle(CPoint const &leftTop, double width, double height, 
 		std::string const &outlineColor, std::string const &fillColor);
 	
@@ -20,7 +19,6 @@ public:
 	double GetHeight() const;
 
 	CPoint GetLeftTop() const;
-	//CPoint GetRightBottom() const;
 
 private:
 	double m_width;

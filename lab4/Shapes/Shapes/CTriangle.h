@@ -5,7 +5,6 @@
 class CTriangle : public virtual ISolidShape
 {
 public:
-	CTriangle();
 	CTriangle(CPoint const & point1, CPoint const & point2, CPoint const & point3, 
 		std::string const &outlineColor, std::string const &fillColor);
 
@@ -18,7 +17,6 @@ public:
 	CPoint GetVertex2() const;
 	CPoint GetVertex3() const;
 private:
-	double GetLength(CPoint const & point1, CPoint const & point2) const;
 
 	std::string m_outlineColor;
 	std::string m_fillColor;

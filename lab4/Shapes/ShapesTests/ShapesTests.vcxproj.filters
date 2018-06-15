@@ -62,12 +62,6 @@
     <ClCompile Include="..\Shapes\CRectangle.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shapes\ISolidShape.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Shapes\IShape.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="..\Shapes\CCircle.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
