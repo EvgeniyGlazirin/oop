@@ -39,7 +39,7 @@ public:
 
 	CTime const operator*(unsigned number) const;
 
-	//unsigned operator*(CTime const & time) const;
+	//unsigned const friend operator*(unsigned number);
 
 	CTime const operator/(unsigned number)const;
 
@@ -65,3 +65,10 @@ private:
 	unsigned m_timeStamp = 0;
 };
 
+/*
+unsigned const CTime::operator*(unsigned number)
+{
+	return ((number * m_timeStamp) % SECONDS_IN_A_DAY);
+};
+
+*/
