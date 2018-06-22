@@ -37,7 +37,9 @@ public:
 
 	CTime & operator-=(CTime const & time2);
 
-	CTime const operator*(unsigned number);
+	CTime const operator*(unsigned number) const;
+
+	unsigned operator*(unsigned number);
 
 	CTime const operator/(unsigned number)const;
 
