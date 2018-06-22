@@ -39,7 +39,7 @@ public:
 
 	CTime const operator*(unsigned number) const;
 
-	unsigned operator*(CTime const & time) const;
+	//unsigned operator*(CTime const & time) const;
 
 	CTime const operator/(unsigned number)const;
 
