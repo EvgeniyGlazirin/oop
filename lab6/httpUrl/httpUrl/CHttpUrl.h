@@ -1,5 +1,4 @@
 #pragma once
-#include <string>
 
 enum Protocol
 {
@@ -14,17 +13,11 @@ public:
 	// выбрасыват исключение CUrlParsingError, содержащее текстовое описание ошибки
 	CHttpUrl(std::string const& url);
 
-	std::string GetURL() const;
-	std::string GetDomain() const;
-	std::string GetDocument() const;
-	Protocol GetProtocol() const;
-	unsigned short GetPort() const;
-
 	/* инициализирует URL на основе переданных параметров.
 	ѕри недопустимости входных параметров выбрасывает исключение
 	std::invalid_argument
 	≈сли им€ документа не начинаетс€ с символа /, то добавл€ет / к имени документа
-
+	*/
 	CHttpUrl(
 		std::string const& domain,
 		std::string const& document,
@@ -34,7 +27,7 @@ public:
 	ѕри недопустимости входных параметров выбрасывает исключение
 	std::invalid_argument
 	≈сли им€ документа не начинаетс€ с символа /, то добавл€ет / к имени документа
-
+	*/
 
 	CHttpUrl(
 		std::string const& domain,
@@ -42,28 +35,12 @@ public:
 		Protocol protocol,
 		unsigned short port);
 
-	// возвращает строковое представление URL-а. ѕорт, €вл€ющийс€ стандартным дл€
-	// выбранного протокола (80 дл€ http и 443 дл€ https) в URL не должен включатьс€
-
-	std::string GetURL()const;
-	// возвращает доменное им€
-	std::string GetDomain()const;
-
-	/*
-	¬озвращает им€ документа. ѕримеры:
-	/
-
-	/index.html
-	/images/photo.jpg
-
-	std::string GetDocument()const;
-
-	// возвращает тип протокола
-	Protocol GetProtocol()const;
-
-	// возвращает номер порта
-	unsigned short GetPort()const;
-	*/
+	std::string GetURL() const;
+	std::string GetDomain() const;
+	std::string GetDocument() const;
+	Protocol GetProtocol() const;
+	unsigned short GetPort() const;
+	
 private:
 	std::string m_url;
 	std::string m_domain;
